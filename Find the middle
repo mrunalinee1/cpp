@@ -1,0 +1,29 @@
+/*struct Node {
+	int val;
+	struct Node* next;
+	Node(int x){
+		val = x;
+		next = NULL;
+	}
+};*/
+
+int getMiddleElement(Node* head){
+    
+    Node* slow = head;
+    Node* fast = head;
+
+    // Traverse the linked list with two pointers
+    // Move slow pointer one step at a time and fast pointer two steps at a time
+    while (fast != NULL && fast->next != NULL)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    // At this point, slow pointer will be at the middle element
+    return slow->val;
+}
+    
+   
+
+
